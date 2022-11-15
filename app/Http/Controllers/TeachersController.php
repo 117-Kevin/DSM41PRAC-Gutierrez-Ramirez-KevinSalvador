@@ -73,9 +73,9 @@ class TeachersController extends Controller
     public function edit($id)
     {
         //
-        $asignaturas = subjects::all($id);
-        $maestros = teachers::all($id);
-        return view('teachers.edit',compact('subjects'))->with('teachers', $maestros);
+        //$asignaturas = subjects::all($id);
+        $maestros = teachers::find($id);
+        return view('teachers.edit')->with('teachers', $maestros);
     }
 
     /**

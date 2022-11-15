@@ -72,9 +72,9 @@ class StudentsController extends Controller
     public function edit($id)
     {
         //
-        $asignaturas = subjects::all($id);
+        //$asignaturas = subjects::all($id);
         $estudiantes = students::find($id);
-        return view('Students.edit',compact('subjects'))->with('students', $estudiantes);
+        return view('Students.edit')->with('students',$estudiantes);
     }
 
     /**

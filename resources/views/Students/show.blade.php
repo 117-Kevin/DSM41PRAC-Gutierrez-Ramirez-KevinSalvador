@@ -34,7 +34,7 @@
                 <h6 class="m-0 font-weight-bold text-primary">Estudiante</h6>
             </div>
             <div class="card-body">
-             <h5 class="card-title"> Nombre: {{ $students->name }}</h5>
+             <h6 class="card-title"> Nombre: {{ $students->name }}</h6>
              <h6 class="card-text">Sexo: {{ $students->sexo }}</h6>
              <h6 class="card-text">Edad: {{ $students->edad }}</h6>
              <h6 class="card-text">Direccion: {{ $students->direccion }}</h6>

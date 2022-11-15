@@ -47,6 +47,7 @@
                 <input class="form-control" type="text" value="{{$groups->description}}" name="description" id="description">
                 
                 <div class="row">
+                    <a class="btn btn-danger m-3"  href="/groups" >atras</a>
                     <button type="submit" class="btn btn-primary m-3">Guadar</button>
 
                 </div>

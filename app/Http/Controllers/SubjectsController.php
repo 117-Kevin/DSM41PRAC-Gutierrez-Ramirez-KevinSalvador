@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\subjects;
 use illuminate\Http\Request;
+use GuzzleHttp\Psr7\Response;
 
 class SubjectsController extends Controller
 {
@@ -28,7 +29,6 @@ class SubjectsController extends Controller
     public function create()
     {
         //
-
         return view('Subjects.add');
     }
 
@@ -40,10 +40,16 @@ class SubjectsController extends Controller
      */
     public function store(Request $request)
     {
+        $rules =[
+            'name'=> 'required|min:10|string',
+            'description' =>'required|min:10'
+        ];
+
         //fromulario almacenamiento de datos 
+        $this->validate($request, $rules);
         $input=$request->all();
         subjects::create($input);
-        return redirect('subjects')->with('message','Se ha creado correctamente el grupo');
+        return redirect('subject')->with('message','Se ha creado correctamente la asignatura');
     }
 
     /**
@@ -69,7 +75,7 @@ class SubjectsController extends Controller
     public function edit($id)
     {
         //  
-        $asignaturas = subjects::findOrFail($id);
+        $asignaturas = subjects::find($id);
         //return $asignaturas;
         return view('Subjects.edit')->with('subjects', $asignaturas);
         
@@ -86,6 +92,7 @@ class SubjectsController extends Controller
     {
         //
         $asignaturas = subjects::findOrFail($id);
+        
         $input=$request->all();
         $asignaturas->update($input);
         return redirect('subject')->with('messageedit','Se actualizo correctamente la asignatura');

@@ -32,18 +32,18 @@
                 <h6 class="m-0 font-weight-bold text-primary">Alta Asignatura</h6>
             </div>
             <div class="card-body">
-                
-            <form action="{{route('subject.store')}}" method="POST"> 
-                {{csrf_field()}}
-                
-                <label for="text"> Nombre:</label>
-                <input class="form-control" type="text" value="" name="name">
+            
+            <form action="{{ url('subject') }}" method="post">
+                {!! csrf_field() !!}
+ 
+                <label for=""> Nombre:</label>
+                <input class="form-control" type="text" id="name" name="name" value="{{old('name')}}">
 
-                <label for="text"> Descripcion:</label>
-                <input class="form-control" type="text" value="" name="name">
+                <label for=""> Descripción:</label>
+                <input class="form-control" type="text" id="description" name="description" value="{{old('description')}}">
                 
                 <div class="row">
-                    <button type="submit" class="btn btn-primary m-3">Guadar</button>
+                    <button type="submit" class="btn btn-primary m-3" value="save">Guadar</button>
 
                 </div>
             </form>

@@ -33,21 +33,22 @@
                 <h6 class="m-0 font-weight-bold text-primary">Editar Asignatura</h6>
             </div>
             <div class="card-body">
-                
-            <form action="{{url('subject/' .$subjects->id) }}" method="post">
-                {!! csrf_field() !!}
-                @method("PATCH")
 
-                <input class="form-control" type="text" value="{{$subjects->id}}" aria-label="Disabled input example" disabled>
-
-                <label for=""> Nombre:</label>
-                <input class="form-control" type="text" value="{{$subjects->name}}" name="name" id="name">
-
-                <label for=""> Descripcion:</label>
-                <input class="form-control" type="text" value="{{$subjects->description}}" name="description" id="description">
-                
-                <div class="row">
-                    <button type="submit" class="btn btn-primary m-3">Guadar</button>
+                <form action="{{url('subject/' .$subjects->id) }}" method="post">
+                    {!! csrf_field() !!}
+                    @method("PATCH")
+    
+                    <input class="form-control" type="text" value="{{$subjects->id}}" aria-label="Disabled input example" disabled>
+                    
+                    <label for=""> Nombre:</label>
+                    <input class="form-control" type="text" value="{{$subjects->name}}" name="name" id="name">
+                    
+                    <label for=""> Descripcion:</label>
+                    <input class="form-control" type="text" value="{{$subjects->description}}" name="description" id="description">
+                    
+                    <div class="row">
+                        <a class="btn btn-danger m-3"  href="/subject" >atras</a>
+                        <button type="submit" class="btn btn-primary m-3">Guadar</button>
 
                 </div>
             </form>

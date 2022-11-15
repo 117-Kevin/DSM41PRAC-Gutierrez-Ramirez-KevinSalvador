@@ -88,9 +88,10 @@ class GroupsController extends Controller
     {
         //
         $grupos = groups::findOrFail($id);
+
         $input=$request->all();
         $grupos->update($input);
-        return redirect('groups')->with('messageedit','Se ha actualizado el registro correctamente');
+        return redirect('groups')->with('messageedit','Se ha actualizado correctamente el grupo');
     }
 
     /**

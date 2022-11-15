@@ -8,7 +8,7 @@
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
     <div class="sidebar-brand-icon rotate-n-15">
-        <i class="fas fa-laugh-wink"></i>
+        <i class="fa-sharp fa-solid fa-school"></i>
     </div>
     <div class="sidebar-brand-text mx-3">UTVT<sup>®</sup></div>
 </a>
@@ -35,13 +35,13 @@
     <span>Estudiantes</span></a>
 </li>
 <!-- Nav Item - Dashboard -->
-<li class="nav-item active2">
+<li class="nav-item active3">
     <a class="nav-link" href="/teachers">
-    <i class="fa-sharp fa-solid fa-users"></i>       
+    <i class="ffa-sharp fa-solid fa-chalkboard-user"></i>       
     <span>Maestros</span></a>
 </li>
 <!-- Nav Item - Dashboard -->
-<li class="nav-item active3">
+<li class="nav-item active4">
     <a class="nav-link" href="/groups">
     <i class="fa-solid fa-landmark"></i>
     <span>Grupos</span></a>
