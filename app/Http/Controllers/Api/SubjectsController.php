@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\groups;
+use App\Models\subjects;
 use Illuminate\Http\Request;
 
-class GroupsController extends Controller
+class SubjectsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class GroupsController extends Controller
     public function index()
     {
         //
-        $grupos = groups::all();
-        return Response()->json(['groups'=>$grupos],200);
+        $asignaturas = subjects::all();
+        return Response()->json(['subjects'=>$asignaturas],200);
     }
 
     /**
@@ -30,10 +30,9 @@ class GroupsController extends Controller
     {
         //
         $input = $request->all();
-        groups::create($input);
+        subjects::create($input);
 
-        return ('El grupo se creo con exito');
-        
+        return ('La materia se creo con exito');
     }
 
     /**
@@ -45,8 +44,8 @@ class GroupsController extends Controller
     public function show($id)
     {
         //
-        $grupos = groups::find($id);
-        return Response()->json($grupos,200);
+        $asignaturas = subjects::find($id);
+        return Response()->json($asignaturas,200);
     }
 
     /**
@@ -59,11 +58,11 @@ class GroupsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $grupos = groups::findOrFail($id);
+        $asignaturas = subjects::findOrFail($id);
 
         $input=$request->all();
-        $grupos->update($input);
-        return ('El grupo se actualizo con exito');
+        $asignaturas->update($input);
+        return ('La materia se actualizo con exito');
     }
 
     /**
@@ -75,9 +74,9 @@ class GroupsController extends Controller
     public function destroy($id)
     {
         //
-        $grupos = groups::findOrFail($id);
+        $asignaturas = subjects::findOrFail($id);
 
-        $grupos->delete();
-        return ('El grupo se elimino de manera exitosa');
+        $asignaturas->delete();
+        return ('La materia se elimino de manera exitosa');
     }
 }

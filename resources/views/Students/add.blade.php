@@ -30,7 +30,7 @@
         <!-- Project Card Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Alta Estudiante</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Alta Estudiantes</h6>
             </div>
             <div class="card-body">
                 
@@ -48,14 +48,15 @@
                 <label for=""> Telefono:</label>
                 <input class="form-control" type="text"  name="telefono" id="telefono">
                 <div class="form-group">
-                    <label for=""> Asignatura Asignado:</label>
+                    <label for=""> Asignatura Asignada:</label>
                         <select class="form-control form-select" aria-label="Default select example" name="subject_id">
-                        <option selected>Elige el nombre de la Asignatura</option>
+                        <option selected>Nombre de la Asignatura</option>
                             @foreach($asignaturas as $asignatura)   
                         <option value={{$asignatura->id}}>{{$asignatura->name}}</option>
                            @endforeach
                         </select>
                     </div>
+                
                 <div class="row">
                     <button type="submit" class="btn btn-primary m-3">Guadar</button>
 

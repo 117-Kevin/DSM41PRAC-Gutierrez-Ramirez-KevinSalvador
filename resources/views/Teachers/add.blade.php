@@ -50,7 +50,7 @@
                 <div class="form-group">
                     <label for=""> Asignatura Asignado:</label>
                         <select class="form-control form-select" aria-label="Default select example" name="subject_id">
-                        <option selected>Elige el nombre de la Asignatura</option>
+                        <option selected>Nombre de la Asignatura</option>
                             @foreach($asignaturas as $asignatura)   
                         <option value={{$asignatura->id}}>{{$asignatura->name}}</option>
                            @endforeach
@@ -59,7 +59,7 @@
                     <div class="form-group">
                         <label for=""> Grupo Asignado:</label>
                             <select class="form-control form-select" aria-label="Default select example" name="group_id">
-                            <option selected>Elige el nombre del grupo</option>
+                            <option selected>Nombre del Grupo</option>
                                 @foreach($grupos as $grupo)   
                             <option value={{$grupo->id}}>{{$grupo->name}}</option>
                                @endforeach

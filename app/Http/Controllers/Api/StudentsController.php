@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\groups;
+use App\Models\students;
 use Illuminate\Http\Request;
 
-class GroupsController extends Controller
+class StudentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class GroupsController extends Controller
     public function index()
     {
         //
-        $grupos = groups::all();
-        return Response()->json(['groups'=>$grupos],200);
+        $estudiantes = students::all();
+        return Response()->json(['students'=>$estudiantes],200);
     }
 
     /**
@@ -30,10 +30,9 @@ class GroupsController extends Controller
     {
         //
         $input = $request->all();
-        groups::create($input);
+        students::create($input);
 
-        return ('El grupo se creo con exito');
-        
+        return ('El estudiante se creo con exito');
     }
 
     /**
@@ -45,8 +44,8 @@ class GroupsController extends Controller
     public function show($id)
     {
         //
-        $grupos = groups::find($id);
-        return Response()->json($grupos,200);
+        $estudiantes = students::find($id);
+        return Response()->json($estudiantes,200);
     }
 
     /**
@@ -59,11 +58,11 @@ class GroupsController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $grupos = groups::findOrFail($id);
+        $estudiantes = students::findOrFail($id);
 
         $input=$request->all();
-        $grupos->update($input);
-        return ('El grupo se actualizo con exito');
+        $estudiantes->update($input);
+        return ('El estudiante se actualizo con exito');
     }
 
     /**
@@ -75,9 +74,9 @@ class GroupsController extends Controller
     public function destroy($id)
     {
         //
-        $grupos = groups::findOrFail($id);
+        $estudiantes = students::findOrFail($id);
 
-        $grupos->delete();
-        return ('El grupo se elimino de manera exitosa');
+        $estudiantes->delete();
+        return ('El estudiante se elimino de manera exitosa');
     }
 }
