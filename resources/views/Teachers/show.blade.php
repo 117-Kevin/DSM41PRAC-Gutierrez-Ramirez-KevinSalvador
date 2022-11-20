@@ -32,12 +32,12 @@
                 <h6 class="m-0 font-weight-bold text-primary">Maestro</h6>
             </div>
             <div class="card-body">
-             <h5 class="card-title"> Nombre: {{ $teachers->name }}</h5>
+             <h6 class="card-title">Nombre: {{ $teachers->name }}</h6>
              <h6 class="card-text">Sexo: {{ $teachers->sexo }}</h6>
              <h6 class="card-text">Edad: {{ $teachers->edad }}</h6>
              <h6 class="card-text">Direccion: {{ $teachers->direccion }}</h6>
              <h6 class="card-text">Telefono: {{ $teachers->telefono }}</h6>
-             <a class="btn btn-outline-success" m-3" href="/teachers" ><i class="fa-solid fa-arrow-left"></i></a>
+             <a class="btn btn-outline-success m-3" href="/teachers" ><i class="fa-solid fa-arrow-left"></i></a>
             </div>
        
     </div>

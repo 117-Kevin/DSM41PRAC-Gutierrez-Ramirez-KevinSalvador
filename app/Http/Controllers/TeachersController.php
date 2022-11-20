@@ -35,6 +35,7 @@ class TeachersController extends Controller
         return view('teachers.add', compact('asignaturas','grupos'));
         //return view('Students.add');
     }
+    
 
     /**
      * Store a newly created resource in storage.

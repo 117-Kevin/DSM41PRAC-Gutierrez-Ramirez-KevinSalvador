@@ -33,14 +33,14 @@
             </div>
             <div class="card-body">
             
-            <form action="{{ url('subject') }}" method="post">
-                {!! csrf_field() !!}
+            <form action="{{route('subject')}}"method="post">
+                @csrf
  
                 <label for=""> Nombre:</label>
-                <input class="form-control" type="text" id="name" name="name" value="{{old('name')}}">
+                <input class="form-control" type="text" id="name" name="name" >
 
                 <label for=""> Descripción:</label>
-                <input class="form-control" type="text" id="description" name="description" value="{{old('description')}}">
+                <input class="form-control" type="text" id="description" name="description" >
                 
                 <div class="row">
                     <button type="submit" class="btn btn-primary m-3" value="save">Guadar</button>

@@ -85,9 +85,8 @@
                                                 <div class="row col-12">
                                                     <div class="col-4">
                                                         <a class="btn btn-success m-3"
-                                                            href="{{route('subject.show',['subject' => $asignatura->id])}}"><i
-                                                                class="fa-regular fa-eye"></i></a>
-                                                    </div>
+                                                        href="{{route('subject.show',['subject' => $asignatura->id])}}"><i
+                                                        class="fa-regular fa-eye"></i></a>                                                    </div>
                                                     <div class="col-4">
                                                         <a class="btn btn-warning m-3"
                                                             href="{{route('subject.edit',['subject' => $asignatura->id])}}"><i

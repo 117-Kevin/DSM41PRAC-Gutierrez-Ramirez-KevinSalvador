@@ -40,16 +40,11 @@ class SubjectsController extends Controller
      */
     public function store(Request $request)
     {
-        $rules =[
-            'name'=> 'required|min:10|string',
-            'description' =>'required|min:10'
-        ];
-
-        //fromulario almacenamiento de datos 
-        $this->validate($request, $rules);
-        $input=$request->all();
-        subjects::create($input);
-        return redirect('subject')->with('message','Se ha creado correctamente la asignatura');
+        $asignaturas = new subjects();
+        $asignaturas->name = $request->post('name');
+        $asignaturas->description = $request->post('description');
+        $asignaturas->save();
+        return redirect('subjects.index')->with('message','Se ha creado correctamente la asignatura');
     }
 
     /**

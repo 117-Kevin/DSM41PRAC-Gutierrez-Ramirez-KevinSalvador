@@ -34,10 +34,10 @@
                 <h6 class="m-0 font-weight-bold text-primary">Asignaturas</h6>
             </div>
             <div class="card-body">
-             <h5 class="card-title"> Nombre: {{ $asignaturas->name }}</h5>
+             <h6 class="card-title">Nombre: {{ $asignaturas->name }}</h6>
              <h6 class="card-text">Descripción: {{ $asignaturas->description }}</h6>
              
-             <a class="btn btn-outline-success" m-3" href="/subject" ><i class="fa-solid fa-arrow-left"></i></a>
+             <a class="btn btn-outline-success m-3" href="/subject" ><i class="fa-solid fa-arrow-left"></i></a>
             </div>
        
     </div>

@@ -33,7 +33,7 @@
             </div>
             <div class="card-body">
                 
-                <form action="{{ url('groups') }}" method="post">
+                <form action="{{ url('groups.store') }}" method="post">
                     {!! csrf_field() !!}
                     
                         <label > Nombre:</label>

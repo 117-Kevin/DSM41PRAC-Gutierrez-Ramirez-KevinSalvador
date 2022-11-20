@@ -33,3 +33,6 @@ Route::resource('groups',GroupsController::class);
 Route::resource('subject',SubjectsController::class);
 Route::resource('students',StudentsController::class);
 Route::resource('teachers',TeachersController::class);
+
+//route::post('/store', [SubjectsController::class, 'store'])->name('subject.store');
+//route::post('/store', [SubjectsController::class, 'store'])->name('subject.store');
