@@ -54,6 +54,10 @@
 
                 <label for=""> Telefono:</label>
                 <input class="form-control" type="text" value="{{$teachers->telefono}}" name="telefono" id="telefono">
+
+                <label for=".">imagenes: </label>
+                <input class="form-control" name="imagenes" id="imagenes" type='file' value="{{$teachers->imagenes}}">
+
                     
                 <div class="row">
                     <a class="btn btn-danger m-3"  href="/teachers" >atras</a>

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\teachers;
 use App\Models\subjects;
+use App\Models\groups;
 //use App\Http\Requests\StorestudentsRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeachersController extends Controller
 {
@@ -31,7 +33,7 @@ class TeachersController extends Controller
     {
         //
         $asignaturas = subjects::all('id','name');
-        $grupos = subjects::all('id','name');
+        $grupos = groups::all('id','name');
         return view('teachers.add', compact('asignaturas','grupos'));
         //return view('Students.add');
     }
@@ -45,9 +47,41 @@ class TeachersController extends Controller
      */
     public function store(Request $request)
     {
+        //return "entre asl storasge";
+        //$request->validate(['imagenes'=>'required | image | mimes:png,jpg,jpeg | max:248 ']);
+        $imagen = new teachers ();
+        //$imagen->name=$request->input('name');
+        //$imagen->sexo=$request->input('sexo');
+        //$imagen->edad=$request->input('edad');
+        //$imagen->direccion=$request->input('direccion');
+        //$imagen->telefono=$request->input('telefono');
+        //$imagenes = $request->file('imagenes')->store('public/imagenes');
+        //$url=Storage::url($imagenes);
+        if ($request->hasfile('imagenes')){
+            $file = $request->file('imagenes');
+            $destinationpath = 'img/imagenes/';
+            $fileName = time(). '-' . $file->getClientOriginalName();
+            $uploadSucces = $request->file('imagenes')->move($destinationpath, $fileName);
+            $imagen -> imagenes = $destinationpath . $fileName;
+        }
+            $imagen->sexo=$request->input('sexo');
+            $imagen->name=$request->input('name');
+            $imagen->edad=$request->input('edad');  
+            $imagen->direccion=$request->input('direccion');
+            $imagen->telefono=$request->input('telefono');
+            $imagen->subject_id=$request->input('subject_id');
+            $imagen->group_id=$request->input('group_id');
+            
+            $imagen->save();
+
         //
-        $input=$request->all();
-        teachers::create($input);
+        //$request->validate(['imagenes'=>'required | image | mimes:png,jpg,jpeg | max:248 ']);
+        //$fileName = time().'.'.$request->imagenes->extension();
+        //$request->imagenes->move(public_path('imagenes'),$fileName);
+        //return back()->with("sucess Imagen se subio con exito");
+        //return ("Se subio con exito"); 
+        //$input=$request->all();
+        //teachers::create($input);
         return redirect('teachers')->with('message','Se ha creado correctamente al estudiante');
     }
 
@@ -74,7 +108,7 @@ class TeachersController extends Controller
     public function edit($id)
     {
         //
-        //$asignaturas = subjects::all($id);
+        //$maestros = teachers::all($id);
         $maestros = teachers::find($id);
         return view('teachers.edit')->with('teachers', $maestros);
     }

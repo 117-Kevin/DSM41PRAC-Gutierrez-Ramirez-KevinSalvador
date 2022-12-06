@@ -34,37 +34,47 @@
             </div>
             <div class="card-body">
                 
-            <form action="{{url('teachers')}}" method="POST">
+            <form action="{{url('teachers')}}" method="POST" enctype="multipart/form-data">
                 {!! csrf_field() !!}
 
                 <label for=""> Nombre:</label>
                 <input class="form-control" type="text"  name="name" id="name">
+
                 <label for=""> Sexo:</label>
                 <input class="form-control" type="text"  name="sexo" id="sexo">
+
                 <label for=""> Edad:</label>
                 <input class="form-control" type="text"  name="edad" id="edad">
+
                 <label for=""> Direccion:</label>
                 <input class="form-control" type="text"  name="direccion" id="direccion">
+
                 <label for=""> Telefono:</label>
                 <input class="form-control" type="text"  name="telefono" id="telefono">
+
                 <div class="form-group">
                     <label for=""> Asignatura Asignado:</label>
-                        <select class="form-control form-select" aria-label="Default select example" name="subject_id">
+                        <select class="form-control form-select" aria-label="Default select example" name="subject_id" id="subject_id">
                         <option selected>Nombre de la Asignatura</option>
                             @foreach($asignaturas as $asignatura)   
                         <option value={{$asignatura->id}}>{{$asignatura->name}}</option>
                            @endforeach
                         </select>
                     </div>
+
                     <div class="form-group">
                         <label for=""> Grupo Asignado:</label>
-                            <select class="form-control form-select" aria-label="Default select example" name="group_id">
+                            <select class="form-control form-select" aria-label="Default select example" name="group_id" id="group_id">
                             <option selected>Nombre del Grupo</option>
                                 @foreach($grupos as $grupo)   
                             <option value={{$grupo->id}}>{{$grupo->name}}</option>
                                @endforeach
                             </select>
                         </div>
+
+                    <label for=".">Subir imagenes: </label>
+                        <input class="form-control" name="imagenes" id="imagenes" type='file'>
+                            
                 
                 <div class="row">
                     <button type="submit" class="btn btn-primary m-3">Guadar</button>

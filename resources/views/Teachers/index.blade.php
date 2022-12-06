@@ -72,6 +72,7 @@
                                             <th>Edad</th>
                                             <th>Direccion</th>
                                             <th>Telefono</th>
+                                            <th>Imagenes</th>
                                             <th>Operaciones</th>
                                         </tr>
                                     </thead>
@@ -86,6 +87,8 @@
                                             <td>{{$maestro->edad}}</td>
                                             <td>{{$maestro->direccion}}</td>
                                             <td>{{$maestro->telefono}}</td>
+                                            <td><img src="{{asset($maestro->imagenes)}}" alt="" style="width: 150px"></td>
+                                            
                                             <!-- botones  -->
                                             <td>
                                                 <div class="row col-12">

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('edad');
             $table->string('direccion');
             $table->integer('telefono');
+            $table->string('imagenes');
             $table->timestamps();
 
             $table->integer('subject_id')->unsigned();
@@ -27,6 +28,7 @@ return new class extends Migration
 
             $table->integer('group_id')->unsigned();
             $table->foreign('group_id')->references('id')->on('groups');
+            
             $table->softDeletes();
         });
     }

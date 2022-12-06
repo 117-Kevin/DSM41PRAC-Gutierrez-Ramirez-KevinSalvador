@@ -46,6 +46,12 @@
     <i class="fa-solid fa-landmark"></i>
     <span>Grupos</span></a>
 </li>
+<!-- Nav Item - Dashboard -->
+<li class="nav-item active4">
+    <a class="nav-link" href="/images">
+    <i class="fa-solid fa-landmark"></i>
+    <span>Imagenes</span></a>
+</li>
 
 
 

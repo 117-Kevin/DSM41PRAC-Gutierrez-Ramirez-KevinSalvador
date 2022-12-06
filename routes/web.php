@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GroupsController;
+use App\Http\Controllers\ImagesController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\SubjectsController;
 use App\Http\Controllers\TeachersController;
@@ -33,6 +34,6 @@ Route::resource('groups',GroupsController::class);
 Route::resource('subject',SubjectsController::class);
 Route::resource('students',StudentsController::class);
 Route::resource('teachers',TeachersController::class);
-
+Route::resource('images',ImagesController::class);
 //route::post('/store', [SubjectsController::class, 'store'])->name('subject.store');
 //route::post('/store', [SubjectsController::class, 'store'])->name('subject.store');

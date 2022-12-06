@@ -40,11 +40,9 @@ class SubjectsController extends Controller
      */
     public function store(Request $request)
     {
-        $asignaturas = new subjects();
-        $asignaturas->name = $request->post('name');
-        $asignaturas->description = $request->post('description');
-        $asignaturas->save();
-        return redirect('subjects.index')->with('message','Se ha creado correctamente la asignatura');
+        $input=$request->all();
+        subjects::create($input);
+        return redirect('subjects')->with('message','Se ha creado correctamente la asignatura');
     }
 
     /**
@@ -70,10 +68,8 @@ class SubjectsController extends Controller
     public function edit($id)
     {
         //  
-        $asignaturas = subjects::find($id);
-        //return $asignaturas;
-        return view('Subjects.edit')->with('subjects', $asignaturas);
-        
+        $asignaturas = subjects::findOrFail($id);
+        return view('subjects.edit')->with('subjects', $asignaturas);
     }
 
     /**

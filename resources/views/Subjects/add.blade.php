@@ -33,9 +33,9 @@
             </div>
             <div class="card-body">
             
-            <form action="{{route('subject')}}"method="post">
-                @csrf
- 
+            <form action="{{url('subject')}}"method="post">
+                {!! csrf_field() !!}
+
                 <label for=""> Nombre:</label>
                 <input class="form-control" type="text" id="name" name="name" >
 

@@ -33,26 +33,26 @@
             </div>
             <div class="card-body">
                 
-                <form action="{{ url('groups.store') }}" method="post">
+                <form action="{{ url('groups') }}" method="post">
                     {!! csrf_field() !!}
                     
                         <label > Nombre:</label>
-                        <input class="form-control" type="text" id="name" name="name">
+                        <input class="form-control" type="text" name="name" id="name">
 
                         <label for=""> Descripción:</label>
-                        <input class="form-control" type="text" id="description" name="description">
+                        <input class="form-control" type="text" name="description" id="description">
                         
                         <div class="form-group">
                         <label for=""> Estudiante Asignado:</label>
                             <select class="form-control form-select" aria-label="Default select example" name="student_id">
-                            <option selected>Elige el nombre del estudiante</option>
+                            <option selected>Nombre del estudiante</option>
                                 @foreach($estudiantes as $estudiante)   
                             <option value={{$estudiante->id}}>{{$estudiante->name}}</option>
                                @endforeach
                             </select>
                         </div>
                         <div class="row">
-                            <button type="submit" class="btn btn-primary m-3" value="save">Guadar</button>
+                            <button type="submit" class="btn btn-primary m-3">Guadar</button>
 
                 </div>
             </form>

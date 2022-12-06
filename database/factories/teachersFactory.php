@@ -25,6 +25,7 @@ class teachersFactory extends Factory
             'edad' => fake()->randomElement(['32','28','42','38','45','30']),
             'direccion' => fake()->sentence(),
             'telefono' => fake()->randomNumber(8, true),
+            'imagenes' => fake()->sentence(),
 
             'subject_id' => subjects::all()->random()->id,
             'group_id' => groups::all()->random()->id,

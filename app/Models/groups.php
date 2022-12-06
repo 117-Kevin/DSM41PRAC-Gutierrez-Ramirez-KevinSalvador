@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class groups extends Model
 {
-    use HasFactory;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -19,8 +19,5 @@ class groups extends Model
         public function students() {
             return $this->hasMany(students::class);
     
-        }
-    use SoftDeletes;    
-    
-    
+        }    
 }

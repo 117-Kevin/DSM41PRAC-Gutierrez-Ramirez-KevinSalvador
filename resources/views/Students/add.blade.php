@@ -56,6 +56,11 @@
                            @endforeach
                         </select>
                     </div>
+                    <div class="col-4">
+                        <form action="/images" enctype="multipart/form-data" method="post">
+                            <input name="file" type=file>
+                        </form>
+                    </div>     
                 
                 <div class="row">
                     <button type="submit" class="btn btn-primary m-3">Guadar</button>
